@@ -2,6 +2,7 @@ apiVersion: apps/v1
 kind: Deployment
 metadata:
   name: java-client-deployment
+  namespace: singlebranch  # Specify the namespace
 spec:
   replicas: 1
   selector:
@@ -17,7 +18,7 @@ spec:
         image: romeo23/java-client:latest
         env:
           - name: SERVER_SERVICE_NAME
-            value: "java-server-service.default.svc.cluster.local"
+            value: "java-server-service.singlebranch.svc.cluster.local"  # Updated for singlebranch namespace
         resources:
           requests:
             cpu: "100m"
@@ -34,4 +35,3 @@ spec:
         - name: log-volume
           hostPath:
             path: /var/logs/client  # Adjust this path as needed
-
