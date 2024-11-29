@@ -15,7 +15,7 @@ spec:
     spec:
       containers:
       - name: java-client
-        image: romeo23/java-client:latest
+        image: romeo23/client-repo-jenkins:latest
         env:
           - name: SERVER_SERVICE_NAME
             value: "java-server-service.singlebranch.svc.cluster.local"  # Updated for singlebranch namespace
