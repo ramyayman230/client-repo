@@ -1,2 +1,3 @@
 #!/bin/bash
-echo " Hello World "
+env = $1
+echo "I am in ${env} stage"
